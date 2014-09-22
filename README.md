@@ -9,10 +9,15 @@ ReversePTP is a free software, under the BSD 2-clause license. For further detai
 Prerequisites
 =============
 This software was tested on Ubuntu 12.04.
+
 Before using ReversePTP:
+
 - Install PTPd from: http://ptpd.sourceforge.net/
+
   This software was tested with PTPd version 2.3.0.
+
 - Disable NTP (or use the -n option - see below):
+
   > sudo service ntp stop
 
 Using ReversePTP
@@ -29,11 +34,17 @@ Usage:
 MasterReversePTP.sh <-i interface> [-h] [-d domain] [-u unicast address] [-l log file name] [-k] [-n]
 
 -d domain    - specifies the domain number of this master. The default is 0.
+
 -h           - displays a short help.
+
 -i interface - specifies the interface through which PTP messages are sent and received.
+
 -k           - indicates that all existing instances of PTPd will be killed when this script starts running.
+
 -l log file  - if this option is used, PTPd generates a statistics log file named according to the given parameter.
+
 -n           - indicates that NTP will be killed when this script starts running.
+
 -u address   - if this option is used, PTP is run in unicast mode, and the address parameter specifies the slave's IP address. In unicast mode both the master and slave must be run with the -u option. If this option is not used, ReversePTP runs in hybrid mode.
 
 SlaveReversePTP
@@ -42,11 +53,17 @@ Usage:
 SlaveReversePTP.sh <-i interface> <-m number of ReversePTP instances> [-h] [-d domain] [-f first master address] [-l log file name] [-k] [-n]
 
 -d domain    - specifies the domain number of the first slave instance. The default is 0. The N instances use N consecutive domain numbers following this number.
+
 -h           - displays a short help.
+
 -i interface - specifies the interface through which PTP messages are sent and received.
+
 -k           - indicates that all existing instances of PTPd will be killed when this script starts running.
+
 -l log file  - specifies the name of the statistics log file. For every slave instance a suffix will be added according to its domain number. If this option is not used, the name of the log file is LogReversePTPSlave_<domain_number>.txt.
+
 -n           - indicates that NTP will be killed when this script starts running.
+
 -u address   - if this option is used, PTP is run in unicast mode, and the address parameter specifies the master's IP address. In unicast mode both the master and slave must be run with the -u option. If this option is not used, ReversePTP runs in hybrid mode.
 
 OffsetReversePTP
@@ -55,6 +72,8 @@ Usage:
 OffsetReversePTP.sh <-d domain> [-h] [-l log file name]
 
 -d domain    - specifies the domain number of the master for which the offset should be displayed.
+
 -h           - displays a short help.
+
 -l log file  - the name of the statistics log file from which the offset should be extracted. If this option is not used, the script tries to extract from LogReversePTPSlave_<domain_number>.txt.
 
