@@ -1,6 +1,10 @@
 Introduction
 ============
-ReversePTP is a PTP variant for Software Defined Networks (SDN).ReversePTP is based on PTP, but is conceptually reversed; in ReversePTP all nodes (SDN switches) in the network function as PTP masters and distribute time to a single node, the controller, which functions as the PTP slave. Hence, all computations and bookkeeping are performed by the controller, whereas the 'dumb' switches are only required to send it their current time periodically. In accordance with the SDN paradigm, the controller is the 'brain', making ReversePTP flexible and programmable from an SDN programmer's perspective.
+ReversePTP is a PTP variant for Software Defined Networks (SDN). ReversePTP is based on PTP, but is conceptually reversed; in ReversePTP all nodes (SDN switches) in the network function as PTP masters and distribute time to a single node, the controller, which functions as the PTP slave. Hence, all computations and bookkeeping are performed by the controller, whereas the 'dumb' switches are only required to send it their current time periodically. In accordance with the SDN paradigm, the controller is the 'brain', making ReversePTP flexible and programmable from an SDN programmer's perspective.
+
+The TimedSDN Project
+====================
+ReversePTP is part of the [TimedSDN project].
 
 License
 =======
@@ -77,3 +81,5 @@ OffsetReversePTP.sh <-d domain> [-h] [-l log file name]
 
 -l log file  - the name of the statistics log file from which the offset should be extracted. If this option is not used, the script tries to extract from LogReversePTPSlave_<domain_number>.txt.
 
+
+[TimedSDN project]: http://tx.technion.ac.il/~dew/TimedSDN.html
